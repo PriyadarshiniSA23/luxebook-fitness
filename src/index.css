@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');@import "tailwindcss";
+
+@import "tailwindcss";
+@import "./styles/tokens.css";
+
+
+@theme {
+  --color-secondary: #e9c349;
+  --color-secondary-fixed: #ffe088;
+  --color-on-surface: #d8e3fb;
+  --color-surface: #081425;
+  --color-surface-container: #152031;
+  --color-surface-container-low: #111c2d;
+  --color-surface-container-high: #1f2a3c;
+  --color-surface-container-highest: #2a3548;
+  --color-surface-container-lowest: #040e1f;
+  --color-background: #081425;
+  --color-primary: #c8c5cb;
+  --color-primary-container: #0b0b0f;
+
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-mobile: 20px;
+  --spacing-gutter: 24px;
+  --spacing-stack-sm: 16px;
+  --spacing-stack-md: 32px;
+  --spacing-stack-lg: 64px;
+  --spacing-container-max: 1440px;
+
+  --font-display-lg: "Playfair Display", serif;
+  --font-display-sm: "Playfair Display", serif;
+  --font-headline-lg: "Playfair Display", serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+}
+.font-display-lg,
+.font-headline-lg {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-body-md,
+.font-label-caps {
+    font-family: 'Inter', sans-serif;
+}

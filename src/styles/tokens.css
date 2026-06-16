@@ -1,0 +1,89 @@
+/*
+  tokens.css – Design token utilities for the Luxebook app
+  -----------------------------------------------------
+  This file defines CSS custom‑property based utility classes that map to the
+  original Stitch design specifications. Adjust the numeric values as needed to
+  exactly match the reference screenshots.
+*/
+
+/* Font families – utility classes for Stitch design */
+.font-display-lg,
+.font-display-sm,
+.font-headline-lg,
+.font-title-lg {
+  font-family: 'Playfair Display', serif;
+}
+.font-body-md,
+.font-body-lg,
+.font-label-caps {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-display-lg {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+.text-display-lg {
+  font-size: 96px;
+  line-height: 1;
+}
+
+.font-headline-lg {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+.text-headline-lg {
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.font-body-md {
+  font-family: "Inter", sans-serif;
+}
+
+.text-body-md {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.text-display-lg-mobile {
+  font-size: 72px;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .text-display-lg {
+    font-size: 96px;
+    line-height: 1;
+  }
+}
+
+/* Text size utilities – approximate values from existing usage */
+.text-display-lg { font-size: 64px; line-height: 1; }
+.text-display-sm { font-size: 48px; line-height: 1; }
+.text-headline-lg { font-size: 48px; line-height: 1.2; }
+.text-body-lg   { font-size: 18px; line-height: 1.5; }
+.text-body-md   { font-size: 16px; line-height: 1.5; }
+.text-label-caps { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; }
+
+/* Spacing utilities – map to custom properties defined in index.css */
+.mt-stack-sm    { margin-top: var(--spacing-stack-sm); }
+.mb-stack-sm    { margin-bottom: var(--spacing-stack-sm); }
+.mt-stack-md    { margin-top: var(--spacing-stack-md); }
+.mb-stack-md    { margin-bottom: var(--spacing-stack-md); }
+.mt-stack-lg    { margin-top: var(--spacing-stack-lg); }
+.mb-stack-lg    { margin-bottom: var(--spacing-stack-lg); }
+.px-margin-mobile { padding-left: var(--spacing-margin-mobile); padding-right: var(--spacing-margin-mobile); }
+.px-margin-desktop { padding-left: var(--spacing-margin-desktop); padding-right: var(--spacing-margin-desktop); }
+.gap-gutter { gap: var(--spacing-gutter); }
+
+/* Additional layout helpers */
+.container-max { max-width: var(--spacing-container-max); margin-left: auto; margin-right: auto; }
+
+/* Example usage comments */
+/*
+   <h1 class="font-display-lg text-display-lg mb-stack-lg">…</h1>
+   <p class="font-body-md text-body-md mt-stack-sm">…</p>
+*/
