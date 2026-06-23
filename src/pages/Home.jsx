@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 function Home() {
   return (
    <>
@@ -22,10 +23,10 @@ function Home() {
         {/* The Logo Image */}
         <div className="relative z-10 w-32 h-32 md:w-48 md:h-48 overflow-hidden rounded-full border border-secondary/20 p-2 glass-panel gold-sweep">
           <img
-            alt="LuxeBook Performance Studio Logo"
-            className="w-full h-full object-contain"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLuZq8QKzjx4M5hqpR4jiZ_lcatND3iQBC5KHog0P--4mOAqMoSgJ4ZnpInPtCagxa-nmMvl01gZMD-wawEV3agvu7Aqepyy3seT9IOHrO4-L2lIWa73CapzfSLau0lJw8eyP7msuUGTm3wtqQOLiu93pExxHBla0tk24s2wezF5CrQdqaO-RfmQv-aRaKdTWNPpyYAtZ8cSPAuGKjk0x8OfUWHalLPnDPqPJGWD5T_fe-x3oYieHCH3cZo"
-          />
+  alt="LuxeBook Performance Studio Logo"
+  className="w-full h-full object-contain"
+  src={logo}
+/>
         </div>
       </div>
       {/* Typography Section */}

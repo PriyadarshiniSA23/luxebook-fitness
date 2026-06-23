@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
+import background from "../assets/background.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -21,10 +23,10 @@ const handleLogin = () => {
         <div className="fixed inset-0 z-0 pointer-events-none opacity-40"></div>
         {/* Full-screen Background Image with Dark Overlay */}
         <div className="fixed inset-0 z-[-1]">
-          <img
-            alt="Luxury gym sanctuary"
+           <img
+            alt="LuxeBook Performance Studio Logo"
             className="w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLviZL4Oc9S7QyudP5M6bCYVUg_Pszf911hYTKoifDohMH2GDGmuHiiD_Vhrbr5iL2KTSDPE6FC3QO64S3rL_cF0b4n9ku6ZPFSUt55snVDk0QZul0iAxi_uAPe87Po4yigqdoMxqe5s3u8pW_E1bSqYFAJzYmvsGc2yFcYT8epH4ebb8n702hdhULQqUdh2q0snTEk5cvMQhYMtCUX_Ec8bmYVWA3GwXH7ENOvvizlasijzNXsPgT_wP3I"
+            src={background}
           />
           <div className="absolute inset-0 bg-overlay" />
         </div>
@@ -48,12 +50,12 @@ const handleLogin = () => {
         <main className="w-full max-w-[560px] px-margin-mobile z-10">
           <div className="glass-card rounded-xl p-stack-lg md:p-12 flex flex-col items-center text-center animate-in fade-in zoom-in duration-700">
             {/* Brand Identity */}
-            <div className="mb-stack-md">
-              <img
-  alt="logo"
-  src="https://via.placeholder.com/100"
-  className="w-16 h-16 object-contain"
-/>
+            <div className="mb-stack-md flex flex-col items-center text-center">
+               <img
+                alt="LuxeBook Performance Studio Logo"
+                className="w-16 h-16 object-contain"
+                src={logo}
+              />
               <h2 className="font-headline-lg text-5xl md:text-6xl text-on-surface tracking-wide">
                 Member Entrance
               </h2>

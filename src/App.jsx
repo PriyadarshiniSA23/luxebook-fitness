@@ -16,6 +16,7 @@ import BookingLayoutWrapper from "./layouts/BookingLayout";
 import RequireAdmin from "./components/RequireAdmin";
 import Trainers from "./pages/Trainers";
 import Login from "./pages/Login";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   useEffect(() => {
@@ -68,7 +69,8 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/luxebook-fitness">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route element={<BookingLayoutWrapper />}>

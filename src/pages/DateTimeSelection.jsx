@@ -7,6 +7,28 @@ function DateTimeSelection() {
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
+const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+const daysInMonth = new Date(
+  selectedYear,
+  selectedMonth + 1,
+  0
+).getDate();
 
   return (
 <>
@@ -134,16 +156,38 @@ function DateTimeSelection() {
               Select Your Date
             </h2>
             <div className="flex items-center gap-4">
-              <button className="material-symbols-outlined text-secondary hover:bg-secondary/10 p-2 rounded-full transition-all">
-                chevron_left
-              </button>
-              <span className="font-title-lg text-title-lg text-secondary-fixed">
-                October 2024
-              </span>
-              <button className="material-symbols-outlined text-secondary hover:bg-secondary/10 p-2 rounded-full transition-all">
-                chevron_right
-              </button>
-            </div>
+  <button
+    onClick={() => {
+      if (selectedMonth === 0) {
+        setSelectedMonth(11);
+        setSelectedYear(selectedYear - 1);
+      } else {
+        setSelectedMonth(selectedMonth - 1);
+      }
+    }}
+    className="material-symbols-outlined text-secondary hover:bg-secondary/10 p-2 rounded-full transition-all"
+  >
+    chevron_left
+  </button>
+
+  <span className="font-title-lg text-title-lg text-secondary-fixed">
+    {months[selectedMonth]} {selectedYear}
+  </span>
+
+  <button
+    onClick={() => {
+      if (selectedMonth === 11) {
+        setSelectedMonth(0);
+        setSelectedYear(selectedYear + 1);
+      } else {
+        setSelectedMonth(selectedMonth + 1);
+      }
+    }}
+    className="material-symbols-outlined text-secondary hover:bg-secondary/10 p-2 rounded-full transition-all"
+  >
+    chevron_right
+  </button>
+</div>
           </div>
           {/* Custom Calendar Grid */}
           <div className="grid grid-cols-7 gap-2">
@@ -160,14 +204,23 @@ function DateTimeSelection() {
               </div>
             ))}
             {/* Month Days */}
-            {[...Array(31)].map((_, i) => {
+            {[...Array(daysInMonth)].map((_, i) => {
               const day = i + 1;
-              const isSelected = selectedDate === day;
+              const isSelected =
+  selectedDate?.day === day &&
+  selectedDate?.month === selectedMonth + 1 &&
+  selectedDate?.year === selectedYear;
               return (
                 <div
                   key={day}
                   className={`aspect-square flex items-center justify-center hover:bg-secondary/10 rounded-lg cursor-pointer transition-all border ${isSelected ? 'bg-secondary/10 text-secondary-fixed font-bold' : ''}`}
-                  onClick={() => setSelectedDate(day)}
+                  onClick={() =>
+  setSelectedDate({
+    day,
+    month: selectedMonth + 1,
+    year: selectedYear,
+  })
+}
                 >
                   {day}
                   {isSelected && <div className="absolute bottom-1 w-1 h-1 bg-secondary rounded-full" />}
@@ -244,14 +297,14 @@ function DateTimeSelection() {
                    Schedule
                  </p>
                 {selectedDate && selectedTime ? (
-                  <p className="font-body-md text-body-md text-secondary-fixed italic">
-                    {selectedDate}/{selectedTime}
-                  </p>
-                ) : (
-                  <p className="font-body-md text-body-md text-secondary-fixed italic">
-                    Selection in progress...
-                  </p>
-                )}
+  <p className="font-body-md text-body-md text-secondary-fixed italic">
+    {selectedDate.day}-{selectedDate.month}-{selectedDate.year} • {selectedTime}
+  </p>
+) : (
+  <p className="font-body-md text-body-md text-secondary-fixed italic">
+    Selection in progress...
+  </p>
+)}
                </div>
             </div>
           </div>
@@ -268,8 +321,8 @@ function DateTimeSelection() {
            <button
              onClick={() => {
                if (selectedDate && selectedTime) {
-      setDateTime({
-  date: `2024-10-${String(selectedDate).padStart(2, "0")}`,
+     setDateTime({
+  date: `${selectedYear}-${String(selectedMonth + 1).padStart(2, "0")}-${String(selectedDate.day).padStart(2, "0")}`,
   time: selectedTime,
 });
                  navigate('/details');

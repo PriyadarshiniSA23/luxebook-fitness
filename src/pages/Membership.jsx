@@ -82,7 +82,7 @@ function Membership() {
   </aside>
   <main className="pt-32 pb-20 px-4 md:px-margin-desktop max-w-container-max mx-auto">
     {/* Hero Section */}
-    <section className="mb-stack-lg text-center reveal">
+    <section className="mb-stack-lg text-center">
       <h1 className="font-display-lg text-display-lg text-secondary-fixed mb-stack-sm">
         The Pinnacle of Performance
       </h1>
@@ -92,7 +92,7 @@ function Membership() {
       </p>
     </section>
     {/* Membership Plans */}
-    <section className="mb-stack-lg reveal">
+    <section className="mb-stack-lg">
       <div className="flex flex-col items-center mb-stack-md">
         <span className="font-label-caps text-label-caps text-secondary tracking-[0.2em] mb-2 uppercase">
           Privileged Access
@@ -198,7 +198,7 @@ function Membership() {
       </div>
     </section>
     {/* Comparison Table */}
-    <section className="mb-stack-lg reveal">
+    <section className="mb-stack-lg">
       <div className="flex flex-col items-center mb-stack-md">
         <span className="font-label-caps text-label-caps text-secondary tracking-[0.2em] mb-2 uppercase">
           Deep Dive

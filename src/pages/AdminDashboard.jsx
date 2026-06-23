@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function AdminDashboard() {
   const [bookings, setBookings] = useState([]);
@@ -87,7 +88,7 @@ const updateStatus = async (id, status) => {
         <img
           alt="LuxeBook Logo"
           className="w-10 h-10 object-contain"
-          src="https://lh3.googleusercontent.com/aida/AP1WRLuZq8QKzjx4M5hqpR4jiZ_lcatND3iQBC5KHog0P--4mOAqMoSgJ4ZnpInPtCagxa-nmMvl01gZMD-wawEV3agvu7Aqepyy3seT9IOHrO4-L2lIWa73CapzfSLau0lJw8eyP7msuUGTm3wtqQOLiu93pExxHBla0tk24s2wezF5CrQdqaO-RfmQv-aRaKdTWNPpyYAtZ8cSPAuGKjk0x8OfUWHalLPnDPqPJGWD5T_fe-x3oYieHCH3cZo"
+          src={logo}
         />
         <div>
           <h1 className="font-display-sm text-display-sm font-bold text-secondary">
